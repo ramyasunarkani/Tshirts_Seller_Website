@@ -1,26 +1,36 @@
 import { FormContext } from "./FormContex";
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 
 function FormContextProvider({ children }) {
-  const [submittedItems, setSubmittedItems] = useState([]);
 
-  // Load data from localStorage when the component mounts
-  useEffect(() => {
-    const storedItems = JSON.parse(localStorage.getItem("submittedItems"));
-    if (storedItems) {
-      setSubmittedItems(storedItems);
-    }
-  }, []);
-
-  // Save data to localStorage whenever the submittedItems state changes
-  useEffect(() => {
-    if (submittedItems.length > 0) {
-      localStorage.setItem("submittedItems", JSON.stringify(submittedItems));
-    }
-  }, [submittedItems]);
+  const decreaseSize = (id, size) => {
+    setSubmittedItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id && item.sizes[size] > 0
+          ? { ...item, sizes: { ...item.sizes, [size]: item.sizes[size] - 1 } }
+          : item
+      )
+    );
+  };
+  const [submittedItems, setSubmittedItems] = useState([
+    {
+      id: 0.0836643379330666,
+      name: "Navy Blue Armanis Tshirts",
+      description: "100% cotton",
+      price: 1299,
+      sizes: { l: 98, m: 19, s: 1 },
+    },
+    {
+      id: 0.8596340341905084,
+      name: "Gucci Tshirt",
+      description: "100% cotton",
+      price: 2000,
+      sizes: { l: 10, m: 20, s: 19 },
+    },
+  ]);
 
   return (
-    <FormContext.Provider value={{ submittedItems, setSubmittedItems }}>
+    <FormContext.Provider value={{ submittedItems, setSubmittedItems,decreaseSize }}>
       {children}
     </FormContext.Provider>
   );

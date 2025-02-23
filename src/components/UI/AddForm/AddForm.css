@@ -10,6 +10,17 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     
 }
+.button{
+    border: none;
+    font-size: 1.4rem;
+    background-color:#ff6624;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin: 0.5rem;
+}
+.button:hover{
+    background-color: #ff6600;
+}
 
 .form_control {
     margin-bottom: 1rem;

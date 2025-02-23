@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import "./AddForm.css";
-import Button from "../Button/Button";
 import { FormContext } from "../../../store/FormContext/FormContex";
 
 function AddForm() {
@@ -50,7 +49,7 @@ function AddForm() {
   }
   return (
     <div className="condition">
-      {!isEditing && <Button onClick={() => setIsEditing(true)}>Add Items</Button>}
+      {!isEditing && <button className="button"onClick={() => setIsEditing(true)}>Add Items</button>}
       {isEditing && (
         <form onSubmit={formSubmitHandler}>
           <div className="form_control">
@@ -78,8 +77,8 @@ function AddForm() {
             <input type="number" id="s" value={formState.sizes.s} onChange={handleSizeChange} />
           </div>
           <div>
-            <Button type="submit">Add Items</Button>
-            <Button type="button" onClick={() => setIsEditing(false)}>Cancel</Button>
+            <button type="submit" className="button">Add Items</button>
+            <button type="button"  className="button" onClick={() => setIsEditing(false)}>Cancel</button>
           </div>
         </form>
       )}

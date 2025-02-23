@@ -3,14 +3,18 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  color: white;
   padding: 0.5rem 2rem;
+  background-color: #ff6600;
+  cursor: pointer;
+  border: none;
   border-radius: 35px;
   font-size: 1rem;
   font-weight: bold;
   
 }
 
-.button:hover {
+.cart:hover {
   background-color: #e65c00;
 }
 

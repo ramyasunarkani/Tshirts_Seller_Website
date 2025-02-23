@@ -18,12 +18,7 @@
     border-radius: 8px;
   }
   
-  /* .tshirt-info {
-    display: flex;
-    flex-direction: column;
-  } */
   
-  /* Style individual text elements */
   .tshirt-name {
     font-size: 1.2rem;
     font-weight: bold;
@@ -52,5 +47,6 @@
     padding: 0.5rem 1rem;
     border-radius: 4px;
     cursor: pointer;
+    margin: 1rem;
   }
   
