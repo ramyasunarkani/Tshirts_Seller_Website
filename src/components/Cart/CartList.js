@@ -9,7 +9,10 @@ function CartList(props) {
         return <p>Loading cart...</p>;
     }
 
-    const { cartItems, totalPrice } = cartContext;
+    const { cartItems,setCartItems, totalPrice } = cartContext;
+    function clearCart(){
+        setCartItems([]);
+    }
 
     return (
         <Modal onClose={props.onClose}>
@@ -32,7 +35,7 @@ function CartList(props) {
 
             <h3 className="total-price">Total Price: ${totalPrice}</h3>
             <div className="cart-buttons">
-                {totalPrice>0&&(<button className="place-order">Place Order</button>)}
+                {totalPrice>0&&(<button className="place-order" onClick={clearCart}>Place Order</button>)}
                 <button className="cancel" onClick={props.onClose}>Cancel</button>
             </div>
         </Modal>

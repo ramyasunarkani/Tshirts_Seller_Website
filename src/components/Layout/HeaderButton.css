@@ -1,4 +1,6 @@
-
+.header-container{
+  margin: 10px;
+}
 .cart {
   display: flex;
   justify-content: space-around;
