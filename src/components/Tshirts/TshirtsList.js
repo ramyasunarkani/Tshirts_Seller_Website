@@ -4,7 +4,7 @@ import  "./TshirtsList.css";
 import CartContext from "../../store/CartContext/CartContext";
 
 function TshirtsList() {
-    const { submittedItems, decreaseSize } = useContext(FormContext);
+    const { submittedItems } = useContext(FormContext);
     const { cartItems, setCartItems } = useContext(CartContext);
 
     function AddCartItems(id, name, price, size) {
@@ -36,7 +36,7 @@ function TshirtsList() {
             }
         });
 
-        decreaseSize(id, size); 
+        
     }
 
     return (
